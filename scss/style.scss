@@ -1,0 +1,51 @@
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+// import navbar
+@import "site-navbar";
+@import "site-page";
+#open-popup {
+  padding: 20px;
+}
+.white-popup {
+  position: relative;
+  background: #fff;
+  padding: 40px;
+  width: auto;
+  max-width: 200px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.mfp-iframe-holder .mfp-content {
+  margin-top: 50px;
+}
+.slider {
+  position: relative;
+  width: 100%;
+}
+
+.slick-slide {
+  margin: 0px 0px;
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+.slick-slide {
+  transition: all ease-in-out 0.3s;
+  opacity: 0.2;
+}
+
+.slick-active {
+  opacity: 0.5;
+}
+
+.slick-current {
+  opacity: 1;
+}

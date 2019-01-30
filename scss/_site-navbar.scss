@@ -1,0 +1,97 @@
+$color-hover: rgba(7, 7, 7, 0.3);
+$color-green: #4bcaff;
+@mixin transition($property) {
+  -moz-transition: $property;
+  -webkit-transition: $property;
+  -ms-transition: $property;
+  transition: $property;
+}
+.b-page-header {
+  position: absolute;
+  height: 100px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $color-hover;
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.1);
+  padding: 10px 0;
+  z-index: 9999;
+  @include transition(all 0.3s ease);
+  .b-logo {
+    position: relative;
+    text-align: left;
+    max-width: 140px;
+  }
+  .b-page-nav {
+    text-align: right;
+    padding-top: 20px;
+    .b-item {
+      display: inline;
+      &:not(:first-child) {
+        margin-left: 26px;
+      }
+      &.active {
+        font-weight: 700;
+        color: $color-green;
+        .b-link-item {
+          color: $color-green;
+          &::before {
+            visibility: visible;
+            opacity: 1;
+            width: 100%;
+          }
+        }
+      }
+      .b-link-item {
+        position: relative;
+        font-family: "lato";
+        color: $white;
+        font-size: 13px;
+        background: transparent;
+        padding: 50px 0;
+        font-weight: 700;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 0%;
+          height: 4px;
+          left: 0;
+          top: 12%;
+          background-color: $color-green;
+          visibility: hidden;
+          opacity: 0;
+          border-radius: 4px;
+          @include transition(all 0.3s ease-in-out);
+        }
+        &:hover {
+          font-weight: 700;
+          color: $color-green;
+          &::before {
+            visibility: visible;
+            opacity: 1;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  &.sticky {
+    position: fixed;
+    height: 60px;
+    padding: 0px 0;
+    background-color: rgba(7, 7, 7, 0.7);
+    z-index: 99999;
+    .b-page-nav {
+      text-align: right;
+      padding-top: 20px;
+      .b-item {
+        .b-link-item {
+          &::before {
+            height: 4px;
+            top: 20%;
+          }
+        }
+      }
+    }
+  }
+}
