@@ -22,133 +22,30 @@ body {
   margin: 0 auto;
   font-family: "lato";
 }
-
-.b-slider-item {
-  .b-images {
-    width: 100%;
-    img {
-      width: 100%;
-    }
-  }
-  .b-slider-content {
-    position: absolute;
-    left: 43%;
-    top: 32%;
-    background: transparent;
-    width: 50%;
-    .b-title {
-      color: $white;
-      font-family: "lato";
-      font-size: 48px;
-      font-weight: 300;
-      box-shadow: 0.5px 0.866px 3px rgba(25, 22, 24, 0.36);
-      .b-current {
-        font-weight: 900;
-      }
-    }
-    .b-norm {
-      font-size: 18px;
-      color: $white;
-      font-family: "lato";
-      font-weight: 300;
-      text-align: left;
-    }
-  }
-  .b-group-btn {
-    position: absolute;
-    left: 43%;
-    top: 60%;
-    .btn {
-      width: 195px;
-      height: 64px;
-      border-radius: 8px;
-      background-color: rgba(114, 179, 204, 0);
-      border: 2px solid $white;
-      color: $white;
-      font-weight: 700;
-      font-family: "lato";
-      &:not(:first-child) {
-        margin-left: 16px;
-      }
-      &:hover {
-        background-color: $color_opaciti;
-        border: 2px solid $color_opaciti;
-      }
-    }
-  }
-  .b-list-social {
-    position: absolute;
-    display: flex;
-    top: 70%;
-    left: 43%;
-    .b-norm {
-      color: $white;
-      font-size: 18px;
-      font-family: "lato";
-      font-weight: 300;
-      margin-top: 10px;
-    }
-    .b-item {
-      position: relative;
-      background-color: rgba(25, 22, 24, 0.36);
-      border-radius: 26px;
-      width: 52px;
-      height: 52px;
-      margin-left: 10px;
-      i {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        color: $color_opaciti;
-        font-size: 26px;
-        @include tranform(translate(-50%, -50%));
-      }
-    }
-  }
-}
-.b-btn {
+.slick-track {
   position: relative;
-  background-color: rgba(25, 22, 24, 0.36);
-  width: 54px;
-  height: 54px;
-  border-radius: 27px;
-  border: none;
-  cursor: pointer;
-  img {
+  width: 100%;
+  .b-content {
     position: absolute;
-    width: 7px;
-    height: 12px;
-    left: 50%;
-    top: 50%;
-    @include tranform(translate(-50%, -50%));
-  }
-  &:hover {
-    background-color: $color_opaciti;
-  }
-}
-.icon-left {
-  position: absolute;
-  left: 5%;
-  top: 50%;
-}
-.icon-right {
-  position: absolute;
-  right: 5%;
-  top: 50%;
-}
-.b-dots {
-  position: absolute;
-  left: 50%;
-  bottom: 10px;
-  @include tranform(translate(-50%, 0%));
-  i {
-    color: $white;
-    &.active {
-      color: $color_opaciti;
+    width: 100%;
+    background: transparent;
+    height: 100%;
+    top: 0%;
+    .b-info {
+      position: absolute;
+      left: 3.2%;
+      top: 40%;
+      color: $white;
+      .b-title {
+        width: 40%;
+      }
+      .b-norm {
+        width: 40%;
+        color: #91c46b;
+      }
     }
   }
 }
-
 .b-page-features {
   position: relative;
   padding: 30px 0;
