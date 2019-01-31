@@ -25,16 +25,23 @@
     <div class="b-page-loader"></div>
     <div class="b-page">
         <header class="b-page-header" id="b-page-header">
+            <div class="b-mobile-menu">
+                <div class="b-mobile-menu-header">
+                    <button class="b-btn-mobile" id="b-togger">
+                        <i class="fas fa-stream"></i>
+                    </button>
+                </div>
+            </div> <!-- .site-mobile-menu -->
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-md-12">
                         <div class="b-logo">
                             <a href="#" class="b-link-logo">
                                 <img src="./images/Logo.png" alt="Logo" />
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-8">
+                    <div class="col-lg-8 col-md-12">
                         <nav class="b-page-nav" id="top-menu">
                             <ul class="b-list-items">
                                 <li class="b-item active">
@@ -68,7 +75,7 @@
             </div>
         </header>
         <section class="lazy b-page-slider" data-sizes="50vw">
-            <div>
+            <div id="b-item-slider">
                 <img data-lazy="./images/backgroup.png" data-srcset="./images/backgroup.png 650w, ./images/backgroup.png 960w"
                     data-sizes="100vw">
                 <div class="b-content">
@@ -83,11 +90,27 @@
                             mauris, id egestas ipsum laoreet e
                         </p>
                     </div>
-
+                    <div class="b-group-buttons">
+                        <button class="btn b-buttons">DOWNLOAD</button>
+                        <button class="btn b-buttons">LEARN MORE</button>
+                    </div>
+                    <div class="b-available">
+                        <p class="b-norm">Available on : </p>
+                        <nav class="b-page-nav">
+                            <ul class="b-list-item">
+                                <li class="item">
+                                    <i class="fas fa-layer-group"></i>
+                                </li>
+                                <li class="item">
+                                    <i class="fas fa-layer-group"></i>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
             <div>
-                <img data-lazy="./images/backgroup.png" data-srcset="./images/backgroup.png 650w, ./images/backgroup.png 960w"
+                <img data-lazy="./images/backgroup_item1.png" data-srcset="./images/backgroup_item1.png 650w, ./images/backgroup_item1.png 960w"
                     data-sizes="100vw">
             </div>
             <div>
@@ -99,7 +122,8 @@
                     data-sizes="100vw">
             </div>
             <div>
-
+                <img data-lazy="./images/backgroup.png" data-srcset="./images/backgroup.png 650w, ./images/backgroup.png 960w"
+                    data-sizes="100vw">
             </div>
             <div>
                 <!-- this slide should inherit the sizes attr from the parent slider -->
@@ -399,37 +423,41 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3">
-                        <div class="b-carousel text-center">
-                            <div class="b-images">
-                                <img src="./images/user-image.png" alt="Images" />
+                        <div class="lazy-item-1 b-carousel text-center">
+                            <div>
+                                <div class="b-images">
+                                    <img data-lazy="./images/user-image.png" data-srcset="./images/user-image.png 650w, ./images/user-image.png 960w"
+                                        data-sizes="100vw">
+                                </div>
+                                <div class="b-content">
+                                    <p class="b-norm">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                                        blandit iaculisLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                                        blandit iaculis
+                                    </p>
+                                    <p class="b-current">
+                                        <span class="b-person">John Doe</span> from some company
+                                    </p>
+                                </div>
                             </div>
-                            <div class="b-content">
-                                <p class="b-norm">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit iaculis
-                                    mauris, id
-                                    egestas ipsum laoreet eu. Sed quis volutpat dolor, vel fermentum lectus. Fusce
-                                    egestas mollis
-                                    gravida.
-                                </p>
-                                <span class="b-current">
-                                    <span class="b-person">John Doe</span> from some company
-                                </span>
+                            <div>
+                                <div class="b-images">
+                                    <img data-lazy="./images/backgroup.png" data-srcset="./images/backgroup.png 650w, ./images/backgroup.png 960w"
+                                        data-sizes="100vw">
+                                </div>
+                                <div class="b-content">
+                                    <p class="b-norm">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                                        blandit iaculisLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                                        blandit iaculis
+                                    </p>
+                                    <p class="b-current">
+                                        <span class="b-person">John Doe</span> from some company
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <nav class="b-page-nav text-center">
-                        <ul class="b-list-items">
-                            <li class="item">
-                                <i class="fas fa-circle"></i>
-                            </li>
-                            <li class="item">
-                                <i class="fas fa-circle"></i>
-                            </li>
-                            <li class="item">
-                                <i class="far fa-circle"></i>
-                            </li>
-                        </ul>
-                    </nav>
                 </div>
             </div>
         </section>
@@ -502,6 +530,17 @@
                 lazyLoad: 'ondemand', // ondemand progressive anticipated
                 infinite: true,
                 dots: true,
+            });
+            $(".lazy-item-1").slick({
+                lazyLoad: 'ondemand', // ondemand progressive anticipated
+                infinite: true,
+                dots: true,
+            });
+            $(".regular").slick({
+                dots: true,
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 4
             });
         });
     </script>

@@ -6,6 +6,9 @@ $color-green: #4bcaff;
   -ms-transition: $property;
   transition: $property;
 }
+$break-small: 320px;
+$break-medium: 768px;
+$break-large: 992px;
 .b-page-header {
   position: absolute;
   height: 100px;
@@ -17,14 +20,41 @@ $color-green: #4bcaff;
   padding: 10px 0;
   z-index: 9999;
   @include transition(all 0.3s ease);
+  .b-mobile-menu {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    right: 10px;
+    top: 15px;
+    z-index: 9999;
+    .b-btn-mobile {
+      background-color: transparent;
+      border: 2px solid $color-green;
+      border-radius: 50%;
+      cursor: pointer;
+      &:hover {
+        background-color: red;
+      }
+      i {
+        color: $color-green;
+      }
+    }
+    @media screen and(max-width:$break-large) {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
   .b-logo {
     position: relative;
     text-align: left;
     max-width: 140px;
   }
+
   .b-page-nav {
     text-align: right;
     padding-top: 20px;
+    margin-left: 10px;
+    @include transition(all 0.3s ease);
     .b-item {
       display: inline;
       &:not(:first-child) {
@@ -74,7 +104,100 @@ $color-green: #4bcaff;
         }
       }
     }
+    @media screen and (max-width: $break-large) {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      text-align: right;
+      padding: 10px;
+      background-color: $color-green;
+      width: 30%;
+      top: 0px;
+      right: -5%;
+      margin-top: -100px;
+
+      .b-item {
+        display: block;
+        &:not(:first-child) {
+          margin-left: 0px;
+        }
+        &.active {
+          font-weight: 700;
+          color: $white;
+          .b-link-item {
+            color: $white;
+            &::before {
+              visibility: hidden;
+              opacity: 1;
+              width: 100%;
+            }
+          }
+        }
+        .b-link-item {
+          &:hover {
+            font-weight: 700;
+            color: $white;
+            &::before {
+              visibility: hidden;
+              opacity: 1;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    @media screen and (max-width: $break-medium) {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      text-align: right;
+      padding: 10px;
+      background-color: $color-green;
+      width: 30%;
+      top: 0px;
+      right: 0px;
+      margin-top: -100px;
+
+      .b-item {
+        display: block;
+        &:not(:first-child) {
+          margin-left: 0px;
+        }
+        &.active {
+          font-weight: 700;
+          color: $white;
+          .b-link-item {
+            color: $white;
+            &::before {
+              visibility: hidden;
+              opacity: 1;
+              width: 100%;
+            }
+          }
+        }
+        .b-link-item {
+          &:hover {
+            font-weight: 700;
+            color: $white;
+            &::before {
+              visibility: hidden;
+              opacity: 1;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    @media screen and (max-width: $break-large) {
+      &.responsive {
+        visibility: visible;
+        opacity: 1;
+        z-index: 9999;
+        margin-top: 0px;
+      }
+    }
   }
+
   &.sticky {
     position: fixed;
     height: 60px;
@@ -84,11 +207,14 @@ $color-green: #4bcaff;
     .b-page-nav {
       text-align: right;
       padding-top: 20px;
+
       .b-item {
         .b-link-item {
+          padding: 20px 0;
+          font-weight: 700;
           &::before {
             height: 4px;
-            top: 20%;
+            top: -10%;
           }
         }
       }

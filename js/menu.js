@@ -6,12 +6,21 @@ var sticky = header.offsetTop;
 function myHeader() {
     if (window.pageYOffset > sticky) {
         header.classList.add('sticky');
-        console.log(1212);
     } else {
         header.classList.remove('sticky');
     }
 }
-
+document.getElementById('b-togger').onclick = function () {
+    toggerMenu();
+}
+function toggerMenu() {
+    var x = document.getElementById('top-menu');
+    if (x.className === 'b-page-nav') {
+        x.className += ' responsive';
+    } else {
+        x.className = 'b-page-nav'
+    }
+}
 
 jQuery(document).ready(function ($) {
     "use strict";
