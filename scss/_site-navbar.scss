@@ -11,7 +11,7 @@ $break-medium: 768px;
 $break-large: 992px;
 .b-page-header {
   position: absolute;
-  height: 100px;
+  height: 80px;
   top: 0;
   left: 0;
   width: 100%;
@@ -78,7 +78,7 @@ $break-large: 992px;
         color: $white;
         font-size: 13px;
         background: transparent;
-        padding: 50px 0;
+        padding: 47px 0 30px 0;
         font-weight: 700;
         &::before {
           content: "";
@@ -200,21 +200,61 @@ $break-large: 992px;
 
   &.sticky {
     position: fixed;
-    height: 60px;
-    padding: 0px 0;
+    height: 80px;
+    padding: 10px 0;
     background-color: rgba(7, 7, 7, 0.7);
     z-index: 99999;
     .b-page-nav {
       text-align: right;
       padding-top: 20px;
-
+      margin-left: 10px;
+      @include transition(all 0.3s ease);
       .b-item {
+        display: inline;
+        &:not(:first-child) {
+          margin-left: 26px;
+        }
+        &.active {
+          font-weight: 700;
+          color: $color-green;
+          .b-link-item {
+            color: $color-green;
+            &::before {
+              visibility: visible;
+              opacity: 1;
+              width: 100%;
+            }
+          }
+        }
         .b-link-item {
-          padding: 20px 0;
+          position: relative;
+          font-family: "lato";
+          color: $white;
+          font-size: 13px;
+          background: transparent;
+          padding: 43px 0 0px 0;
           font-weight: 700;
           &::before {
+            content: "";
+            position: absolute;
+            width: 0%;
             height: 4px;
-            top: -10%;
+            left: 0;
+            top: 12%;
+            background-color: $color-green;
+            visibility: hidden;
+            opacity: 0;
+            border-radius: 4px;
+            @include transition(all 0.3s ease-in-out);
+          }
+          &:hover {
+            font-weight: 700;
+            color: $color-green;
+            &::before {
+              visibility: visible;
+              opacity: 1;
+              width: 100%;
+            }
           }
         }
       }

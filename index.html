@@ -17,6 +17,9 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css'>
     <link rel="stylesheet" type="text/css" href="./css/slick.css">
     <link rel="stylesheet" type="text/css" href="./css/slick-theme.css">
+    <!-- animation -->
+    <link rel="stylesheet" href="./css/animate.css">
+    <!-- style main -->
     <link rel="stylesheet" href="./css/style.css">
 
 </head>
@@ -131,7 +134,7 @@
                     data-sizes="100vw">
             </div>
         </section>
-        <section class="b-page-features" id="features">
+        <section class="b-page-features  wow bounceInUp" data-wow-delay="1s" data-wow-duration="4s" id="features">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3">
@@ -209,7 +212,7 @@
                 </div>
             </div>
         </section>
-        <section class="b-page-gallery" id="gallery">
+        <section class="b-page-gallery wow bounceInUp" data-wow-delay="1s" data-wow-duration="4s" id="gallery">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3">
@@ -323,7 +326,7 @@
                 </div>
             </div>
         </section>
-        <section class="b-page-video" id="video">
+        <section class="b-page-video wow bounceInUp" data-wow-delay="1s" data-wow-duration="4s" id="video">
             <div class="container-fluid">
                 <div class="b-content text-center">
                     <button class="b-btn-play" id="open-popup">
@@ -341,7 +344,7 @@
                 </div>
             </div>
         </section>
-        <section class="b-page-prices" id="prices">
+        <section class="b-page-prices wow bounceInUp" data-wow-delay="1s" data-wow-duration="4s" id="prices">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3">
@@ -410,7 +413,7 @@
                 </div>
             </div>
         </section>
-        <section class="b-page-testimonials" id="testimonails">
+        <section class="b-page-testimonials wow bounceInUp" data-wow-delay="1s" data-wow-duration="4s" id="testimonails">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3">
@@ -461,7 +464,7 @@
                 </div>
             </div>
         </section>
-        <section class="b-page-download" id="download">
+        <section class="b-page-download wow bounceInUp" data-wow-delay="1s" data-wow-duration="4s" id="download">
             <div class="container">
                 <div class="content text-center">
                     <h3 class="b-title">
@@ -473,7 +476,7 @@
                 </div>
             </div>
         </section>
-        <section class="b-page-contact" id="contact">
+        <section class="b-page-contact wow bounceInUp" data-wow-delay="1s" data-wow-duration="4s" id="contact">
             <div class="b-page-form text-center">
                 <form action="">
                     <h3 class="b-title">
@@ -524,6 +527,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js'></script>
     <script src="./js/popup.js"></script>
     <script src="./js/slick.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./js/wow.js"></script>
     <script type="text/javascript">
         $(document).on('ready', function () {
             $(".lazy").slick({
@@ -543,6 +547,21 @@
                 slidesToScroll: 4
             });
         });
+        wow = new WOW(
+            {
+                animateClass: 'animated',
+                offset: 100,
+                callback: function (box) {
+                    console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+                }
+            }
+        );
+        wow.init();
+        // document.getElementById('moar').onclick = function () {
+        //     var section = document.createElement('section');
+        //     section.className = 'section--purple wow fadeInDown';
+        //     this.parentNode.insertBefore(section, this);
+        // };
     </script>
 </body>
 
