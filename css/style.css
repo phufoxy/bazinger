@@ -1,3 +1,5 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,800");
 .b-page-header {
   position: absolute;
   height: 80px;
@@ -53,11 +55,20 @@
   -ms-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+.b-page-header .b-page-nav .b-open-menu {
+  position: absolute;
+  right: 10px;
+  top: -40px;
+}
+.b-page-header .b-page-nav .b-open-menu i {
+  color: #fff;
+  font-size: 28px;
+}
 .b-page-header .b-page-nav .b-item {
   display: inline;
 }
 .b-page-header .b-page-nav .b-item:not(:first-child) {
-  margin-left: 26px;
+  margin-left: 10px;
 }
 .b-page-header .b-page-nav .b-item.active {
   font-weight: 700;
@@ -105,96 +116,6 @@
   opacity: 1;
   width: 100%;
 }
-@media screen and (max-width: 992px) {
-  .b-page-header .b-page-nav {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    text-align: right;
-    padding: 10px;
-    background-color: #4bcaff;
-    width: 30%;
-    top: 0px;
-    right: -5%;
-    margin-top: -100px;
-  }
-  .b-page-header .b-page-nav .b-item {
-    display: block;
-  }
-  .b-page-header .b-page-nav .b-item:not(:first-child) {
-    margin-left: 0px;
-  }
-  .b-page-header .b-page-nav .b-item.active {
-    font-weight: 700;
-    color: #fff;
-  }
-  .b-page-header .b-page-nav .b-item.active .b-link-item {
-    color: #fff;
-  }
-  .b-page-header .b-page-nav .b-item.active .b-link-item::before {
-    visibility: hidden;
-    opacity: 1;
-    width: 100%;
-  }
-  .b-page-header .b-page-nav .b-item .b-link-item:hover {
-    font-weight: 700;
-    color: #fff;
-  }
-  .b-page-header .b-page-nav .b-item .b-link-item:hover::before {
-    visibility: hidden;
-    opacity: 1;
-    width: 100%;
-  }
-}
-@media screen and (max-width: 768px) {
-  .b-page-header .b-page-nav {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    text-align: right;
-    padding: 10px;
-    background-color: #4bcaff;
-    width: 30%;
-    top: 0px;
-    right: 0px;
-    margin-top: -100px;
-  }
-  .b-page-header .b-page-nav .b-item {
-    display: block;
-  }
-  .b-page-header .b-page-nav .b-item:not(:first-child) {
-    margin-left: 0px;
-  }
-  .b-page-header .b-page-nav .b-item.active {
-    font-weight: 700;
-    color: #fff;
-  }
-  .b-page-header .b-page-nav .b-item.active .b-link-item {
-    color: #fff;
-  }
-  .b-page-header .b-page-nav .b-item.active .b-link-item::before {
-    visibility: hidden;
-    opacity: 1;
-    width: 100%;
-  }
-  .b-page-header .b-page-nav .b-item .b-link-item:hover {
-    font-weight: 700;
-    color: #fff;
-  }
-  .b-page-header .b-page-nav .b-item .b-link-item:hover::before {
-    visibility: hidden;
-    opacity: 1;
-    width: 100%;
-  }
-}
-@media screen and (max-width: 992px) {
-  .b-page-header .b-page-nav.responsive {
-    visibility: visible;
-    opacity: 1;
-    z-index: 9999;
-    margin-top: 0px;
-  }
-}
 .b-page-header.sticky {
   position: fixed;
   height: 80px;
@@ -215,7 +136,7 @@
   display: inline;
 }
 .b-page-header.sticky .b-page-nav .b-item:not(:first-child) {
-  margin-left: 26px;
+  margin-left: 10px;
 }
 .b-page-header.sticky .b-page-nav .b-item.active {
   font-weight: 700;
@@ -923,6 +844,294 @@ body {
   z-index: 99999;
   background: url("../images/loader.gif") center no-repeat #fff;
   transition: all 0.9s ease-in-out;
+}
+
+.site-mobile-menu {
+  width: 300px;
+  position: fixed;
+  right: 0;
+  z-index: 2000;
+  padding-top: 20px;
+  background: #fff;
+  height: calc(100vh);
+  z-index: 99999;
+  transform: translateX(110%);
+  box-shadow: -10px 0 20px -10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s all ease-in-out;
+}
+.offcanvas-menu .site-mobile-menu {
+  transform: translateX(0%);
+}
+.site-mobile-menu .site-mobile-menu-header {
+  width: 100%;
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.site-mobile-menu .site-mobile-menu-header .site-mobile-menu-close {
+  float: right;
+  margin-top: 8px;
+}
+.site-mobile-menu .site-mobile-menu-header .site-mobile-menu-close span {
+  font-size: 30px;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 0px;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.3s all ease;
+}
+.site-mobile-menu .site-mobile-menu-header .site-mobile-menu-close span:hover {
+  color: #4bcaff;
+}
+.site-mobile-menu .site-mobile-menu-header .site-mobile-menu-logo {
+  float: left;
+  margin-top: 10px;
+  margin-left: 0px;
+}
+.site-mobile-menu .site-mobile-menu-header .site-mobile-menu-logo a {
+  display: inline-block;
+  text-transform: uppercase;
+}
+.site-mobile-menu .site-mobile-menu-header .site-mobile-menu-logo a img {
+  max-width: 70px;
+}
+.site-mobile-menu .site-mobile-menu-header .site-mobile-menu-logo a:hover {
+  text-decoration: none;
+}
+.site-mobile-menu .site-mobile-menu-body {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  padding: 20px;
+  height: calc(100vh - 52px);
+  padding-bottom: 150px;
+}
+.site-mobile-menu .site-nav-wrap {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+.site-mobile-menu .site-nav-wrap a {
+  padding: 10px 20px;
+  display: block;
+  position: relative;
+  color: #212529;
+}
+.site-mobile-menu .site-nav-wrap a:hover {
+  color: #007bff;
+}
+.site-mobile-menu .site-nav-wrap li {
+  position: relative;
+  display: block;
+}
+.site-mobile-menu .site-nav-wrap li.active > a {
+  color: #007bff;
+}
+.site-mobile-menu .site-nav-wrap .arrow-collapse {
+  position: absolute;
+  right: 0px;
+  top: 10px;
+  z-index: 20;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.site-mobile-menu .site-nav-wrap .arrow-collapse:hover {
+  background: #f8f9fa;
+}
+.site-mobile-menu .site-nav-wrap .arrow-collapse:before {
+  font-size: 12px;
+  z-index: 20;
+  font-family: "icomoon";
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-180deg);
+  transition: 0.3s all ease;
+}
+.site-mobile-menu .site-nav-wrap .arrow-collapse.collapsed:before {
+  transform: translate(-50%, -50%);
+}
+.site-mobile-menu .site-nav-wrap > li {
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+}
+.site-mobile-menu .site-nav-wrap > li > a {
+  padding-left: 20px;
+  font-size: 20px;
+}
+.site-mobile-menu .site-nav-wrap > li > ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.site-mobile-menu .site-nav-wrap > li > ul > li {
+  display: block;
+}
+.site-mobile-menu .site-nav-wrap > li > ul > li > a {
+  padding-left: 40px;
+  font-size: 16px;
+}
+.site-mobile-menu .site-nav-wrap > li > ul > li > ul {
+  padding: 0;
+  margin: 0;
+}
+.site-mobile-menu .site-nav-wrap > li > ul > li > ul > li {
+  display: block;
+}
+.site-mobile-menu .site-nav-wrap > li > ul > li > ul > li > a {
+  font-size: 16px;
+  padding-left: 60px;
+}
+
+/*==========================
+Global Rules
+============================*/
+/*==========================================
+// Body Rules
+===========================================*/
+* {
+  transition: all 0.5s ease;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+/*==========================
+Pre-loader Style
+============================*/
+.loadingScreen {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #fefefe;
+  z-index: 900000;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*Wrapper*/
+}
+.loadingScreen__wrapper {
+  width: fit-content;
+  /* text */
+}
+.loadingScreen__wrapper:hover *,
+.loadingScreen__wrapper:hover ::before,
+.loadingScreen__wrapper:hover ::after {
+  animation-play-state: paused;
+}
+.loadingScreen__wrapper__text p {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  color: #b3b3b3;
+  letter-spacing: 5px;
+}
+.loadingScreen__wrapper__text p span {
+  padding: 7px;
+}
+.loadingScreen__wrapper__text p span:nth-child(1) {
+  display: inline-block;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-delay: 100ms;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  backface-visibility: hidden;
+}
+.loadingScreen__wrapper__text p span:nth-child(2) {
+  display: inline-block;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-delay: 200ms;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  backface-visibility: hidden;
+}
+.loadingScreen__wrapper__text p span:nth-child(3) {
+  display: inline-block;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-delay: 300ms;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  backface-visibility: hidden;
+}
+.loadingScreen__wrapper__text p span:nth-child(4) {
+  display: inline-block;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-delay: 400ms;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  backface-visibility: hidden;
+}
+.loadingScreen__wrapper__text p span:nth-child(5) {
+  display: inline-block;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-delay: 500ms;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  backface-visibility: hidden;
+}
+.loadingScreen__wrapper__text p span:nth-child(6) {
+  display: inline-block;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-delay: 600ms;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  backface-visibility: hidden;
+}
+.loadingScreen__wrapper__text p span:nth-child(7) {
+  display: inline-block;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-delay: 700ms;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  backface-visibility: hidden;
+}
+.loadingScreen__wrapper__text p span:nth-child(8) {
+  display: inline-block;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-delay: 800ms;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  backface-visibility: hidden;
+}
+.loadingScreen__wrapper__text p span:nth-child(9) {
+  display: inline-block;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-delay: 900ms;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  backface-visibility: hidden;
 }
 
 #open-popup {

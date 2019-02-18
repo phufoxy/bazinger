@@ -11,8 +11,8 @@
     <!-- bootstrap -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <!-- Link Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <!-- Link Style -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css'>
     <link rel="stylesheet" type="text/css" href="./css/slick.css">
@@ -25,16 +25,27 @@
 </head>
 
 <body>
-    <div class="b-page-loader"></div>
+    <!-- =========== Loading screen  =============== -->
+    <div class="loadingScreen">
+        <!-- Loading Screen Wrapper -->
+        <div class="loadingScreen__wrapper">
+            <!-- Loader Text -->
+            <div class="loadingScreen__wrapper__text">
+                <p>loading<span>.</span><span>.</span><span>.</span><span>.</span><span>.</span>
+                </p>
+            </div><!-- / Loader Text -->
+        </div>
+    </div><!-- ========================================= -->
     <div class="b-page">
-        <header class="b-page-header" id="b-page-header">
-            <div class="b-mobile-menu">
-                <div class="b-mobile-menu-header">
-                    <button class="b-btn-mobile" id="b-togger">
-                        <i class="fas fa-stream"></i>
-                    </button>
+        <div class="site-mobile-menu">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"><i class="fas fa-window-close"></i></span>
                 </div>
-            </div> <!-- .site-mobile-menu -->
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div> <!-- .site-mobile-menu -->
+        <header class="b-page-header" id="b-page-header">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-12">
@@ -46,7 +57,12 @@
                     </div>
                     <div class="col-lg-8 col-md-12">
                         <nav class="b-page-nav" id="top-menu">
-                            <ul class="b-list-items">
+                            <div class="b-open-menu d-lg-none ">
+                                <a href="#" class="site-menu-toggle js-menu-toggle">
+                                    <i class="fas fa-bars"></i>
+                                </a>
+                            </div>
+                            <ul class="b-list-items js-clone-nav d-none d-lg-block">
                                 <li class="b-item active">
                                     <a href="#" class="b-link-item">HOME</a>
                                 </li>
@@ -79,8 +95,8 @@
         </header>
         <section class="lazy b-page-slider" data-sizes="50vw">
             <div id="b-item-slider">
-                <img data-lazy="./images/backgroup.png" data-srcset="./images/backgroup.png 650w, ./images/backgroup.png 960w"
-                    data-sizes="100vw">
+                <img data-lazy="./images/backgroup.png"
+                    data-srcset="./images/backgroup.png 650w, ./images/backgroup.png 960w" data-sizes="100vw">
                 <div class="b-content">
                     <div class="b-info">
                         <h3 class="b-title">
@@ -113,28 +129,29 @@
                 </div>
             </div>
             <div>
-                <img data-lazy="./images/backgroup_item1.png" data-srcset="./images/backgroup_item1.png 650w, ./images/backgroup_item1.png 960w"
+                <img data-lazy="./images/backgroup_item1.png"
+                    data-srcset="./images/backgroup_item1.png 650w, ./images/backgroup_item1.png 960w"
                     data-sizes="100vw">
             </div>
             <div>
-                <img data-lazy="./images/backgroup.png" data-srcset="./images/backgroup.png 650w, ./images/backgroup.png 960w"
-                    data-sizes="100vw">
+                <img data-lazy="./images/backgroup.png"
+                    data-srcset="./images/backgroup.png 650w, ./images/backgroup.png 960w" data-sizes="100vw">
             </div>
             <div>
-                <img data-lazy="./images/backgroup.png" data-srcset="./images/backgroup.png 650w, ./images/backgroup.png 960w"
-                    data-sizes="100vw">
+                <img data-lazy="./images/backgroup.png"
+                    data-srcset="./images/backgroup.png 650w, ./images/backgroup.png 960w" data-sizes="100vw">
             </div>
             <div>
-                <img data-lazy="./images/backgroup.png" data-srcset="./images/backgroup.png 650w, ./images/backgroup.png 960w"
-                    data-sizes="100vw">
+                <img data-lazy="./images/backgroup.png"
+                    data-srcset="./images/backgroup.png 650w, ./images/backgroup.png 960w" data-sizes="100vw">
             </div>
             <div>
                 <!-- this slide should inherit the sizes attr from the parent slider -->
-                <img data-lazy="./images/backgroup.png" data-srcset="./images/backgroup.png 650w, ./images/backgroup.png 960w"
-                    data-sizes="100vw">
+                <img data-lazy="./images/backgroup.png"
+                    data-srcset="./images/backgroup.png 650w, ./images/backgroup.png 960w" data-sizes="100vw">
             </div>
         </section>
-        <section class="b-page-features  wow bounceInUp" data-wow-delay="1s" data-wow-duration="4s" id="features">
+        <section class="b-page-features" id="features">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3">
@@ -146,7 +163,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-3">
-                        <div class="b-cards text-center">
+                        <div class="b-cards text-center  wow bounceInDown" data-wow-delay="1s" data-wow-duration="1s">
                             <div class="b-icon">
                                 <i class="fas fa-layer-group"></i>
                             </div>
@@ -162,7 +179,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="b-cards text-center">
+                        <div class="b-cards text-center wow bounceInDown" data-wow-delay="1s" data-wow-duration="1s">
                             <div class="b-icon">
                                 <i class="fas fa-layer-group"></i>
                             </div>
@@ -178,7 +195,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="b-cards text-center">
+                        <div class="b-cards text-center wow bounceInDown" data-wow-delay="1s" data-wow-duration="1s">
                             <div class="b-icon">
                                 <i class="fas fa-layer-group"></i>
                             </div>
@@ -194,7 +211,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="b-cards text-center">
+                        <div class="b-cards text-center wow bounceInDown" data-wow-delay="1s" data-wow-duration="1s">
                             <div class="b-icon">
                                 <i class="fas fa-layer-group"></i>
                             </div>
@@ -212,7 +229,7 @@
                 </div>
             </div>
         </section>
-        <section class="b-page-gallery wow bounceInUp" data-wow-delay="1s" data-wow-duration="4s" id="gallery">
+        <section class="b-page-gallery" id="gallery">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3">
@@ -228,7 +245,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-3">
-                        <div class="b-cards">
+                        <div class="b-cards wow bounceInDown" data-wow-delay="1s" data-wow-duration="1s">
                             <a href="#" class="b-link">
                                 <div class="b-card-header">
                                     <div class="b-images">
@@ -252,7 +269,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="b-cards">
+                        <div class="b-cards wow bounceInDown" data-wow-delay="1s" data-wow-duration="1s">
                             <a href="#" class="b-link">
                                 <div class="b-card-header">
                                     <div class="b-images">
@@ -276,7 +293,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="b-cards">
+                        <div class="b-cards wow bounceInDown" data-wow-delay="1s" data-wow-duration="1s">
                             <a href="#" class="b-link">
                                 <div class="b-card-header">
                                     <div class="b-images">
@@ -300,7 +317,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="b-cards">
+                        <div class="b-cards wow bounceInDown" data-wow-delay="1s" data-wow-duration="1s">
                             <a href="#" class="b-link">
                                 <div class="b-card-header">
                                     <div class="b-images">
@@ -360,7 +377,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
-                        <div class="b-cards b-blue">
+                        <div class="b-cards b-blue wow bounceInDown" data-wow-delay="1s" data-wow-duration="1s">
                             <div class="b-card-header">
                                 <h3 class="b-title">
                                     BASIC PACKAGE
@@ -377,7 +394,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="b-cards b-green">
+                        <div class="b-cards b-green wow bounceInDown" data-wow-delay="1s" data-wow-duration="1s">
                             <div class="b-card-header">
                                 <h3 class="b-title">
                                     BASIC PACKAGE
@@ -394,7 +411,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="b-cards b-oranges">
+                        <div class="b-cards b-oranges wow bounceInDown" data-wow-delay="1s" data-wow-duration="1s">
                             <div class="b-card-header">
                                 <h3 class="b-title">
                                     BASIC PACKAGE
@@ -413,7 +430,8 @@
                 </div>
             </div>
         </section>
-        <section class="b-page-testimonials wow bounceInUp" data-wow-delay="1s" data-wow-duration="4s" id="testimonails">
+        <section class="b-page-testimonials wow bounceInUp" data-wow-delay="1s" data-wow-duration="4s"
+            id="testimonails">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3">
@@ -429,7 +447,8 @@
                         <div class="lazy-item-1 b-carousel text-center">
                             <div>
                                 <div class="b-images">
-                                    <img data-lazy="./images/user-image.png" data-srcset="./images/user-image.png 650w, ./images/user-image.png 960w"
+                                    <img data-lazy="./images/user-image.png"
+                                        data-srcset="./images/user-image.png 650w, ./images/user-image.png 960w"
                                         data-sizes="100vw">
                                 </div>
                                 <div class="b-content">
@@ -445,7 +464,8 @@
                             </div>
                             <div>
                                 <div class="b-images">
-                                    <img data-lazy="./images/backgroup.png" data-srcset="./images/backgroup.png 650w, ./images/backgroup.png 960w"
+                                    <img data-lazy="./images/backgroup.png"
+                                        data-srcset="./images/backgroup.png 650w, ./images/backgroup.png 960w"
                                         data-sizes="100vw">
                                 </div>
                                 <div class="b-content">
@@ -464,9 +484,9 @@
                 </div>
             </div>
         </section>
-        <section class="b-page-download wow bounceInUp" data-wow-delay="1s" data-wow-duration="4s" id="download">
+        <section class="b-page-download" id="download">
             <div class="container">
-                <div class="content text-center">
+                <div class="content text-center wow bounceInDown" data-wow-delay="1s" data-wow-duration="1s">
                     <h3 class="b-title">
                         Do you Like this app ?
                     </h3>
@@ -476,9 +496,9 @@
                 </div>
             </div>
         </section>
-        <section class="b-page-contact wow bounceInUp" data-wow-delay="1s" data-wow-duration="4s" id="contact">
+        <section class="b-page-contact " id="contact">
             <div class="b-page-form text-center">
-                <form action="">
+                <form action="" class="wow bounceInDown" data-wow-delay="1s" data-wow-duration="4s">
                     <h3 class="b-title">
                         Contact
                     </h3>
